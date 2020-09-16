@@ -13,13 +13,20 @@
         grid-template-areas: 
         "titulo ."
         "parrafo1 imagen1"
-        "boton3 imagen1"
+        "parrafo2 imagen1"
+        "parrafo3 imagen1"
         "tabla imagen2"
         "boton1 boton2"
-       ;
+        "boton3 .";
       }
       #parrafo1{
           grid-area:parrafo1;
+      }
+      #parrafo2{
+          grid-area:parrafo2;
+      }
+      #parrafo3{
+          grid-area:parrafo3;
       }
       #imagen2{
           grid-area:imagen2;
@@ -45,11 +52,18 @@
 <body>
     <div id="contenedor">
     <h1 id="titulo">Porsche Gt3rs</h1>
-        <p id="parrafo1">Un homenaje al amor puro por los autos con cáracter y determinación. Así puede definirse al nuevo <strong>
+        <p id="parrafo1" style="background-color: white;">Un homenaje al amor puro por los autos con cáracter y determinación. Así puede definirse al nuevo <strong>
         Porsche 911 GT3 RS</strong>, construido sobre la actual carrocería 991.2 por su código interno y que hoy por 
         hoy, es <strong>lo más extremo que Porsche produce</strong> en cuanto a manejo y prestaciones para pista.</p>
+        <p id="parrafo2">Si bien es un auto totalmente legal para su uso en calle, su desarrollo <strong>fue enfocado en la competición
+        </strong> en <a href="https://es.wikipedia.org/wiki/N%C3%BCrburgring">Nürburgring</a> razón por la que recurre a una pinta radical con <strong>difusores, alerones y entradas de aire</strong>
+         a lo largo y ancho de la carrocería.</p>
+         <p id="parrafo3">Pero su motor es la joya que corona esta obra maestra. Se trata del 911 de aspiración natural más potente de 
+        la historia, con su legendario motor <strong>6 cilindros Bóxer de 4.0 litros</strong> de desplazamiento que 
+        produce <strong>520 caballos</strong> de potencia a unas escalofriantes 9.000 rpm y <strong>470 Nm</strong>
+        de torque.</p>
     <table border="1" id="tabla">
-        <tr>
+        <tbody><tr>
             <th>Potencia</th>
             <td>520 caballos</td>
         </tr>
@@ -73,13 +87,14 @@
             <th>Precio</th>
             <td>224.100 euros</td>
         </tr>
-    </table>
+    </tbody></table>
     <img src="_DSC0720.JPG" width="200" height="300" id="imagen1">
-    <img src="2019-porsche-gt3-rs-2-1550078224.jpg" width="200" height="300" id="imagen2">
+    <img src="2019-porsche-gt3-rs-2-1550078224.jpg" width="300" height="150" id="imagen2">
     <button id="btnCambiar">cambiar</button>
     <button id="btnOcultar">ocultar</button>
     <button id="btnMostrar">mostrar</button>
     <script src="archivo.js"></script>
 </div>
+
 </body>
 </html>
