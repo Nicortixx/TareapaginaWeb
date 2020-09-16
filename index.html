@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+      #contenedor {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "titulo ."
+        "parrafo1 imagen1"
+        "boton3 imagen1"
+        "tabla imagen2"
+        "boton1 boton2"
+       ;
+      }
+      #parrafo1{
+          grid-area:parrafo1;
+      }
+      #imagen2{
+          grid-area:imagen2;
+      }
+      #imagen1{
+          grid-area:imagen1;
+      }
+      #tabla{
+          grid-area:tabla;
+      }
+      #btnCambiar{
+          grid-area:boton1;
+      }
+      #btnOcultar{
+          grid-area:boton2;
+      }
+      #btnMostrar{
+          grid-area:boton3;
+      }
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+    <h1 id="titulo">Porsche Gt3rs</h1>
+        <p id="parrafo1">Un homenaje al amor puro por los autos con cáracter y determinación. Así puede definirse al nuevo <strong>
+        Porsche 911 GT3 RS</strong>, construido sobre la actual carrocería 991.2 por su código interno y que hoy por 
+        hoy, es <strong>lo más extremo que Porsche produce</strong> en cuanto a manejo y prestaciones para pista.</p>
+    <table border="1" id="tabla">
+        <tr>
+            <th>Potencia</th>
+            <td>520 caballos</td>
+        </tr>
+        <tr>
+            <th>Torque</th>
+            <td>470 N/m</td>
+        </tr>
+        <tr>
+            <th>Velocidad maxima</th>
+            <td>312 Km/H</td>
+        </tr>
+        <tr>
+            <th>0-100 Km/h</th>
+            <td>3.2 s</td>
+        </tr>
+        <tr>
+            <th>Peso</th>
+            <td>1500 Kg</td>
+        </tr>
+        <tr>
+            <th>Precio</th>
+            <td>224.100 euros</td>
+        </tr>
+    </table>
+    <img src="_DSC0720.JPG" width="200" height="300" id="imagen1">
+    <img src="2019-porsche-gt3-rs-2-1550078224.jpg" width="200" height="300" id="imagen2">
+    <button id="btnCambiar">cambiar</button>
+    <button id="btnOcultar">ocultar</button>
+    <button id="btnMostrar">mostrar</button>
+    <script src="archivo.js"></script>
+</div>
+</body>
+</html>
