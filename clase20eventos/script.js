@@ -12,11 +12,11 @@ let dX = 12;
 let dY = 5;
 let angle = 0;
 let dAngle = 5;
-let t = 0.1;
+let t = 0;
 let x2 = 10;
 let y2 = 500;
-let vX = 50;
-let vY = -50;
+let vX = 12;
+let vY = -12;
 let a = 10;
 
 function mover() {
@@ -26,10 +26,10 @@ function mover() {
     angle = angle + dAngle;
     terza.style.transform = `translate(${x}px,${y}px) rotate(${angle}deg) `;
 }
-function mover2(){    
+function mover2(){  
+  t+= 0.1;  
     x2 = x2 + vX*t;
-    y2 = y2 + vY*t + (a*t*t/2);
-    t += 0.001;
+    y2 = y2 + vY*t + (a*Math.pow(t,2))/2;
     angle = angle + dAngle;
     info.style.transform = `translate(${x2}px,${y2}px) rotate(${angle}deg)`;
   }
