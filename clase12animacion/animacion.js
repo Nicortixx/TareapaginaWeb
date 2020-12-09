@@ -19,9 +19,11 @@ function loadImages(sources, callback) {
   }
 }
 var sources = {
-  yoda: "http://www.html5canvastutorials.com/demos/assets/yoda.jpg",
+  yoda: "https://pbs.twimg.com/profile_images/554818382877298688/sqBhLvT9.png",
   soccerBall:
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg",
+    fondo :
+    "https://services.meteored.com/img/article/cuando-la-nieve-genera-el-silencio-231261-1_1280.jpg"
 };
 let x = 20;
 let y = 120;
@@ -38,6 +40,7 @@ function draw(images) {
   if (y - 0 < 15)vY = -vY;
   if (x - 0 < 15)vX = -vX;
   ctx.clearRect(0, 0, 600, 300);
+  ctx.drawImage(images.fondo, 0, 0, 600, 300);
   ctx.drawImage(images.yoda, x2, y2, 60, 60);
   ctx.drawImage(images.soccerBall, x- 15, y- 15, 15, 15);
 }
