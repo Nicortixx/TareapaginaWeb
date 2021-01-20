@@ -19,21 +19,21 @@ let lapiz = {
         // ctx.drawImage(this.imagen, this.x-this.r, this.y-this.r, 2*this.r, 2*this.r);
         ctx.fillStyle = "rgba(255,165,0)";
         ctx.beginPath();
-        ctx.fillRect(this.x, this.y, 75, 30);
+        ctx.fillRect(this.x-37.5, this.y-15, 75, 30);
         ctx.stroke();
         ctx.fill();
 
         ctx.fillStyle = "rgba(0,0,0)";
         ctx.beginPath();
-        ctx.moveTo(this.x+75, this.y);
-        ctx.lineTo(this.x +100, this.y +15);
-        ctx.lineTo(this.x +75, this.y +30);
+        ctx.moveTo(this.x+37.5, this.y-15);
+        ctx.lineTo(this.x +62.5, this.y);
+        ctx.lineTo(this.x +37.5, this.y +15);
         ctx.stroke();
         ctx.fill();
 
         ctx.fillStyle = "rgba(0,0,0)";
         ctx.beginPath();
-        ctx.arc(this.x, this.y+15, this.r, (3 * Math.PI)/2, (Math.PI)/2, true);
+        ctx.arc(this.x-37.5, this.y, this.r, (3 * Math.PI)/2, (Math.PI)/2, true);
         ctx.stroke();
         ctx.fill();
 
