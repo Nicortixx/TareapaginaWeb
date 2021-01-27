@@ -26,6 +26,10 @@ let Balon = {
     moverse:function(){
         this.x = this.x + this.vX * dT/1000;
         this.y = this.y + this.vY * dT/1000;
+        if (400 - this.y < this.r)this.vY = -this.vY;
+        if (400 - this.x < this.r)this.vX = -this.vX
+        if (this.y - 0 < this.r)this.vY = -this.vY;
+        if (this.x - 0 < this.r)this.vX = -this.vX;
     }
 
 }
