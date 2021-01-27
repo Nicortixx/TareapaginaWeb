@@ -1,39 +1,24 @@
-import {IMAGES as images} from './initialize.js'
+import {canvas, IMAGES as images} from './initialize.js'
 import {ctx, drawObj, run, start, dT} from './initialize.js'
 
 // CREACIón del objeto balón
 // PROPIEDADES> x, y, vX, vY, r, imagen
 // METODOS> dibujarse
-
+let balones = []
 // console.log(images)
-let lapiz = {
+let Balon = {
     //PROPIEDADES
     x:200,
     y:200,
     r:15,
-    vX: 0,// px por segundo
-    vY: 0,
+    vX: 50,// px por segundo
+    vY: -50,
     // imagen: undefined,
     //METODOS
     dibujarse:function(){
         // ctx.drawImage(this.imagen, this.x-this.r, this.y-this.r, 2*this.r, 2*this.r);
-        ctx.fillStyle = "rgba(255,165,0)";
         ctx.beginPath();
-        ctx.fillRect(this.x-37.5, this.y-15, 75, 30);
-        ctx.stroke();
-        ctx.fill();
-
-        ctx.fillStyle = "rgba(0,0,0)";
-        ctx.beginPath();
-        ctx.moveTo(this.x+37.5, this.y-15);
-        ctx.lineTo(this.x +62.5, this.y);
-        ctx.lineTo(this.x +37.5, this.y +15);
-        ctx.stroke();
-        ctx.fill();
-
-        ctx.fillStyle = "rgba(0,0,0)";
-        ctx.beginPath();
-        ctx.arc(this.x-37.5, this.y, this.r, (3 * Math.PI)/2, (Math.PI)/2, true);
+        ctx.arc(this.x, this.y, this.r, 2*Math.PI ,0);
         ctx.stroke();
         ctx.fill();
 
@@ -45,24 +30,23 @@ let lapiz = {
 
 }
 
-// Puedo crear un objeto apartir del objeto balon
-let lapiz2 = Object.create(lapiz)
-lapiz2.x = 0;
-lapiz2.y = 0;
-lapiz2.vX = 10;
-lapiz2.vY = 5;
-let lapiz3 = Object.create(lapiz)
-lapiz3.x = 0;
-lapiz3.y = 400;
-lapiz3.vX = 10;
-lapiz3.vY = -10;
 drawObj.draw =  function(){
     ctx.clearRect(0, 0, 400, 400);
-    lapiz.dibujarse();
-    lapiz.moverse();
-    lapiz2.dibujarse();
-    lapiz2.moverse();
-    lapiz3.dibujarse();
-    lapiz3.moverse();
+    for (let balon of balones){
+        balon.dibujarse()
+        balon.moverse()
+    }
 }
 run()
+// Puedo crear un objeto apartir del objeto balon
+canvas.onclick = function crearParticula(pelota){
+    let nuevoBalon = Object.create(Balon)
+    nuevoBalon.x = (pelota.offsetX)
+    nuevoBalon.y = (pelota.offsetY)
+    let ang = 2*Math.PI*Math.random()
+    let velocidad = 60*Math.random()
+    nuevoBalon.vX = velocidad*Math.cos(ang)
+    nuevoBalon.vY = velocidad*Math.sin(ang)
+    balones.push(nuevoBalon)
+    console.log(balones)
+}
